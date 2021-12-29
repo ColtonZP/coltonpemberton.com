@@ -9,7 +9,9 @@ export const Footer = () => {
           <a href="https://github.com/ColtonZP" className="icon">
             <img src={github} alt="Github" />
           </a>
-          <a href="https://www.linkedin.com/in/colton-pemberton-1a7292163/" className="icon">
+          <a
+            href="https://www.linkedin.com/in/colton-pemberton-1a7292163/"
+            className="icon">
             <img src={linkedin} alt="LinkedIn" />
           </a>
         </div>

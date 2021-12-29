@@ -8,9 +8,9 @@ export const Header = () => {
         <h2 className="tag-line">Sr. Front End Developer</h2>
 
         <p className="about">
-          I like to build projects using <span>React.js</span>. I work hard to make the internet a
-          better place than when I found it. I currently work at Accenture Federal Services as a Sr.
-          Front End Engineer.
+          I like to build projects using <span>React.js</span>. I work hard to
+          make the internet a better place than when I found it. I currently
+          work at Accenture Federal Services as a Sr. Front End Engineer.
         </p>
 
         <a href="mailto: colton@coltonpemberton.com?subject=Contact from coltonpemberton.com">
