@@ -1,5 +1,5 @@
-import github from '../images/github.svg'
-import linkedin from '../images/linkedin.svg'
+import github from '../assets/images/github.svg'
+import linkedin from '../assets/images/linkedin.svg'
 
 export const Footer = () => {
   return (

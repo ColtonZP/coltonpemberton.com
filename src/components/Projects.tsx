@@ -2,9 +2,11 @@ import { useState, useEffect } from 'react'
 import sanityClient from '../client'
 
 interface Project {
+  id: number
   title: string
   liveURL: string
   sourceUrl: string
+  archived: boolean
 }
 
 interface MainProject extends Project {
@@ -20,8 +22,8 @@ interface MainProject extends Project {
 
 export const Projects = () => {
   const [archive, toggleArchive] = useState(false)
-  const [mainProjects, setMainProject] = useState<MainProject[]>(null)
-  const [archived, setArchived] = useState<Project[]>(null)
+  const [mainProjects, setMainProject] = useState<MainProject[]>([])
+  const [archived, setArchived] = useState<Project[]>([])
 
   useEffect(() => {
     sanityClient
@@ -43,7 +45,7 @@ export const Projects = () => {
             }
           }`,
       )
-      .then(data => {
+      .then((data: MainProject[]) => {
         setMainProject(data.filter(project => !project.archived))
         setArchived(data.filter(project => project.archived))
       })
