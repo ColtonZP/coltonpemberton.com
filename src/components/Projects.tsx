@@ -58,62 +58,67 @@ export const Projects = () => {
 
   return (
     <div className="py-16">
-      <h3 className="text-5xl">Projects</h3>
+      <h3 className="text-4xl">Projects</h3>
 
-      <ul className="grid grid-cols-1 md:grid-cols-6 grid-flow-col gap-8 grid-flow-row-dense py-16">
+      <ul className="py-16">
         {mainProjects &&
-          mainProjects.map((site, i) => (
-            <li
-              className={`${
-                i < 2 ? 'col-span-3' : 'col-span-2'
-              } inline-flex flex-col`}
-              key={site.title}>
-              <img
-                className="rounded"
-                src={site.mainImage.asset.url}
-                alt={site.title}
-              />
-              <div className="bg-gray-800 rounded-md w-11/12 m-auto bottom-4 relative px-4 pb-4 flex-1 flex flex-col">
-                <h4 className="text-3xl py-2 px-4 bg-gray-900 relative rounded bottom-6 z-20 w-fit m-auto">
-                  {site.title}
-                </h4>
+          mainProjects.map((site, i) => {
+            const isEven = i % 2
+            return (
+              <li className="relative mb-24" key={site.title}>
+                <img
+                  className={`rounded w-3/5 ${isEven && 'ml-auto'}`}
+                  src={site.mainImage.asset.url}
+                  alt={site.title}
+                />
+                <div
+                  className={`bg-gray-800 rounded-md w-3/5 absolute bottom-10 px-4 pb-4 pt-10 text-sm ${
+                    !isEven && 'right-0'
+                  }`}>
+                  <h4
+                    className={`text-2xl py-2 px-4 bg-gray-900 absolute -top-4 rounded z-20 w-fit ${
+                      isEven ? '-right-4' : '-left-4'
+                    }`}>
+                    {site.title}
+                  </h4>
 
-                <p className="flex-1">{site.description}</p>
+                  <p className="">{site.description}</p>
 
-                <div className="my-4">
-                  <a
-                    className="bg-cp-blue py-1 px-2 rounded inline-block mr-4"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={site.liveURL}>
-                    Live
-                  </a>
-                  <a
-                    className="bg-cp-blue py-1 px-2 rounded inline-block"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={site.sourceUrl}>
-                    Source
-                  </a>
+                  <div className="my-4">
+                    <a
+                      className="bg-cp-blue py-1 px-2 rounded inline-block mr-4"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={site.liveURL}>
+                      Live
+                    </a>
+                    <a
+                      className="bg-cp-blue py-1 px-2 rounded inline-block"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={site.sourceUrl}>
+                      Source
+                    </a>
+                  </div>
+
+                  <ul className="flex flex-wrap">
+                    {site.categories.map(tag => (
+                      <li className="pr-4 text-cp-blue" key={tag}>
+                        {tag}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-
-                <ul className="flex flex-wrap">
-                  {site.categories.map(tag => (
-                    <li className="pr-4 text-cp-blue" key={tag}>
-                      {tag}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </li>
-          ))}
+              </li>
+            )
+          })}
       </ul>
 
       <button
         className="m-auto block text-cp-blue border rounded border-cp-blue py-1 px-4"
         onClick={() => toggleArchive(!archive)}
         type="button">
-        {archive ? 'hide archive -' : 'view archive +'}
+        {archive ? 'hide older projects -' : 'view older projects +'}
       </button>
 
       {archive && (
