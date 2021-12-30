@@ -57,33 +57,30 @@ export const Projects = () => {
   }, [])
 
   return (
-    <div className="">
-      <h3 className="text-5xl py-16">Projects</h3>
+    <div className="py-16">
+      <h3 className="text-5xl">Projects</h3>
 
-      <ul className="grid grid-cols-1 md:grid-cols-6 grid-flow-col gap-8 grid-flow-row-dense">
+      <ul className="grid grid-cols-1 md:grid-cols-6 grid-flow-col gap-8 grid-flow-row-dense py-16">
         {mainProjects &&
           mainProjects.map((site, i) => (
             <li
-              className={`col-span-${i < 2 ? '3' : '2'} inline-flex flex-col`}
+              className={`${
+                i < 2 ? 'col-span-3' : 'col-span-2'
+              } inline-flex flex-col`}
               key={site.title}>
-              <h4 className="text-3xl py-2 px-4 bg-gray-800 relative rounded-md right-3 top-2 z-20 w-fit">
-                {site.title}
-              </h4>
               <img
-                className="rounded-lg"
+                className="rounded"
                 src={site.mainImage.asset.url}
                 alt={site.title}
               />
-              <div className="bg-gray-800 rounded-md w-11/12 m-auto bottom-4 relative p-4 flex-1">
-                <ul>
-                  {site.categories.map(tag => (
-                    <li className="inline pr-4 text-cp-blue" key={tag}>
-                      {tag}
-                    </li>
-                  ))}
-                </ul>
+              <div className="bg-gray-800 rounded-md w-11/12 m-auto bottom-4 relative px-4 pb-4 flex-1 flex flex-col">
+                <h4 className="text-3xl py-2 px-4 bg-gray-900 relative rounded bottom-6 z-20 w-fit m-auto">
+                  {site.title}
+                </h4>
 
-                <div className="my-3">
+                <p className="flex-1">{site.description}</p>
+
+                <div className="my-4">
                   <a
                     className="bg-cp-blue py-1 px-2 rounded inline-block mr-4"
                     target="_blank"
@@ -100,27 +97,35 @@ export const Projects = () => {
                   </a>
                 </div>
 
-                <p>{site.description}</p>
+                <ul className="flex flex-wrap">
+                  {site.categories.map(tag => (
+                    <li className="pr-4 text-cp-blue" key={tag}>
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </li>
           ))}
       </ul>
 
       <button
-        className="show-more"
+        className="m-auto block text-cp-blue border rounded border-cp-blue py-1 px-4"
         onClick={() => toggleArchive(!archive)}
         type="button">
         {archive ? 'hide archive -' : 'view archive +'}
       </button>
 
       {archive && (
-        <ul className="archive">
+        <ul className="text-cp-blue">
           {archived.map(site => (
-            <li key={site.title}>
-              <h5 className="title">{site.title}</h5>
+            <li key={site.title} className="flex mt-6">
+              <h5 className="">{site.title}</h5>
+              <div className="border-b-2 border-dotted border-cp-blue flex-1 relative bottom-1 mx-1" />
               <div className="links">
                 {site.sourceUrl && (
                   <a
+                    className="mr-4"
                     target="_blank"
                     rel="noopener noreferrer"
                     href={site.sourceUrl}>

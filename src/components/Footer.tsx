@@ -3,19 +3,13 @@ import linkedin from '../assets/images/linkedin.svg'
 
 export const Footer = () => {
   return (
-    <footer>
-      <div className="content">
-        <div className="container links">
-          <a href="https://github.com/ColtonZP" className="icon">
-            <img src={github} alt="Github" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/colton-pemberton-1a7292163/"
-            className="icon">
-            <img src={linkedin} alt="LinkedIn" />
-          </a>
-        </div>
-      </div>
+    <footer className="w-full bg-cp-blue flex justify-center py-12">
+      <a href="https://github.com/ColtonZP" className="mr-16">
+        <img src={github} alt="Github" />
+      </a>
+      <a href="https://www.linkedin.com/in/colton-pemberton-1a7292163/">
+        <img src={linkedin} alt="LinkedIn" />
+      </a>
     </footer>
   )
 }
