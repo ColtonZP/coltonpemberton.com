@@ -46,46 +46,62 @@ export const Projects = () => {
           }`,
       )
       .then((data: MainProject[]) => {
-        setMainProject(data.filter(project => !project.archived))
-        setArchived(data.filter(project => project.archived))
+        setMainProject(
+          data.filter(project => !project.archived).sort((a, b) => a.id - b.id),
+        )
+        setArchived(
+          data.filter(project => project.archived).sort((a, b) => a.id - b.id),
+        )
       })
       .catch(console.error)
   }, [])
 
   return (
-    <div className="my-work container">
-      <h3>Projects</h3>
+    <div className="">
+      <h3 className="text-5xl py-16">Projects</h3>
 
-      <ul className="projects">
+      <ul className="grid grid-cols-1 md:grid-cols-6 grid-flow-col gap-8 grid-flow-row-dense">
         {mainProjects &&
-          mainProjects.map(site => (
-            <li className="project" key={site.title}>
-              <div className="image-overlay">
-                <h4>{site.title}</h4>
-                <img src={site.mainImage.asset.url} alt={site.title} />
-                <ul className="tags">
+          mainProjects.map((site, i) => (
+            <li
+              className={`col-span-${i < 2 ? '3' : '2'} inline-flex flex-col`}
+              key={site.title}>
+              <h4 className="text-3xl py-2 px-4 bg-gray-800 relative rounded-md right-3 top-2 z-20 w-fit">
+                {site.title}
+              </h4>
+              <img
+                className="rounded-lg"
+                src={site.mainImage.asset.url}
+                alt={site.title}
+              />
+              <div className="bg-gray-800 rounded-md w-11/12 m-auto bottom-4 relative p-4 flex-1">
+                <ul>
                   {site.categories.map(tag => (
-                    <li key={tag}>{tag}</li>
+                    <li className="inline pr-4 text-cp-blue" key={tag}>
+                      {tag}
+                    </li>
                   ))}
                 </ul>
-              </div>
 
-              <div className="links">
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={site.liveURL}>
-                  Live
-                </a>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={site.sourceUrl}>
-                  Source
-                </a>
-              </div>
+                <div className="my-3">
+                  <a
+                    className="bg-cp-blue py-1 px-2 rounded inline-block mr-4"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={site.liveURL}>
+                    Live
+                  </a>
+                  <a
+                    className="bg-cp-blue py-1 px-2 rounded inline-block"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={site.sourceUrl}>
+                    Source
+                  </a>
+                </div>
 
-              <p>{site.description}</p>
+                <p>{site.description}</p>
+              </div>
             </li>
           ))}
       </ul>
