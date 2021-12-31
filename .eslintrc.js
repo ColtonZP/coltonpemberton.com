@@ -25,6 +25,7 @@ module.exports = {
     },
   },
   rules: {
+    'no-use-before-define': 'off',
     'import/extensions': 'off',
     'import/prefer-default-export': 'off',
     'react/function-component-definition': 'off',

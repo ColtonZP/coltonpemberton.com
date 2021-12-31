@@ -3,7 +3,7 @@ import linkedin from '../assets/images/linkedin.svg'
 
 export const Footer = () => {
   return (
-    <footer className="w-full bg-cp-blue flex justify-center py-12">
+    <footer className="w-full bg-cp-teal flex justify-center py-12">
       <a href="https://github.com/ColtonZP" className="mr-16">
         <img src={github} alt="Github" />
       </a>

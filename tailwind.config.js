@@ -4,7 +4,7 @@ module.exports = {
     extend: {
       colors: {
         'cp-dark-gray': '#061113FF',
-        'cp-blue': '#55D6BE',
+        'cp-teal': '#55D6BE',
         'cp-green': '#7CEA9C',
         'cp-purple': '#9067C6',
         'cp-red': '#F71735',
