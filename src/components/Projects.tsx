@@ -54,10 +54,10 @@ export const Projects = () => {
       )
       .then((data: MainProject[]) => {
         setMainProject(
-          data.filter(project => !project.archived).sort((a, b) => a.id - b.id),
+          data.filter(project => !project.archived).sort((a, b) => b.id - a.id),
         )
         setArchived(
-          data.filter(project => project.archived).sort((a, b) => a.id - b.id),
+          data.filter(project => project.archived).sort((a, b) => b.id - a.id),
         )
       })
       .catch(console.error)
@@ -87,7 +87,7 @@ export const Projects = () => {
                     alt={site.title}
                   />
                   <div
-                    className={`bg-gray-800 rounded-md w-4/5 absolute -bottom-16 px-4 pb-4 pt-10 ${
+                    className={`bg-gray-800 rounded-md w-4/6 absolute -bottom-16 px-4 pb-4 pt-10 ${
                       isEven && 'right-0'
                     }`}>
                     <h4
@@ -108,10 +108,10 @@ export const Projects = () => {
               )
             })}
           </ul>
-          <ul className="grid sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="grid sm:grid-cols-2 lg:grid-cols-3 mb-52 gap-4">
             {mainProjects.slice(3, mainProjects.length).map(site => (
               <li
-                className="relative mb-52 bg-gray-800 rounded p-4 gap-4"
+                className="flex flex-col bg-gray-800 rounded p-4"
                 key={site.title}>
                 <img
                   className="rounded"
@@ -172,7 +172,7 @@ export const Projects = () => {
 
 const Info = ({ description, liveUrl, sourceUrl, tags }: InfoProps) => (
   <>
-    <p>{description}</p>
+    <p className="flex-1">{description}</p>
 
     <div className="my-4">
       <a
