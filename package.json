@@ -1,25 +1,20 @@
 {
   "name": "coltonpemberton.com",
-  "version": "6.0.0",
+  "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "deploy": "tsc && vite build && firebase deploy"
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@sanity/client": "^2.23.2",
     "@vitejs/plugin-react": "^1.0.7",
+    "prop-types": "^15.8.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "vite": "^2.7.2"
   },
   "devDependencies": {
-    "@types/node": "^17.0.5",
-    "@types/react": "^17.0.38",
-    "@types/react-dom": "^17.0.11",
-    "@typescript-eslint/eslint-plugin": "^5.7.0",
-    "@typescript-eslint/parser": "^5.7.0",
     "autoprefixer": "^10.4.0",
     "eslint": "^8.5.0",
     "eslint-config-airbnb": "^19.0.2",
