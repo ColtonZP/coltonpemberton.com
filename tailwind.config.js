@@ -10,7 +10,7 @@ module.exports = {
         'cp-red': '#F71735',
       },
       backgroundImage: {
-        'hero-pattern': "url('src/assets/images/top_wave.svg')",
+        'hero-img': "url('/src/assets/images/top_wave.svg')",
       },
     },
   },

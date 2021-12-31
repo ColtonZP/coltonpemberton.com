@@ -1,6 +1,6 @@
 export const Hero = () => {
   return (
-    <header className="h-screen bg-hero-pattern bg-no-repeat bg-bottom bg-cover">
+    <header className="h-screen bg-hero-img bg-no-repeat bg-bottom bg-cover">
       <div className="h-full max-w-6xl mx-auto px-4 sm:px-3 md:px-5 flex flex-col items-start justify-center">
         <h1 className="text-7xl mb-3">
           Colton <b>Pemberton</b>

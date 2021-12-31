@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    node: true,
   },
   extends: [
     'plugin:react/recommended',
@@ -15,14 +16,9 @@ module.exports = {
     ecmaVersion: 13,
     sourceType: 'module',
   },
-  plugins: ['react'],
-  settings: {
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
-    },
-  },
+  plugins: [
+    'react',
+  ],
   rules: {
     'no-use-before-define': 'off',
     'import/extensions': 'off',
@@ -31,4 +27,4 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.js'] }],
   },
-}
+};
