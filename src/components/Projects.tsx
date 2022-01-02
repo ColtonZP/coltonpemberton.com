@@ -1,11 +1,36 @@
 import { useState, useEffect } from 'react'
-import PropTypes from 'prop-types'
 import sanityClient from '../client'
+
+interface Project {
+  id: number
+  title: string
+  liveURL: string
+  sourceUrl: string
+  archived: boolean
+}
+
+interface MainProject extends Project {
+  description: string
+  mainImage: {
+    asset: {
+      _id: string
+      url: string
+    }
+  }
+  categories: string[]
+}
+
+interface InfoProps {
+  description: string
+  liveUrl: string
+  sourceUrl: string
+  tags: string[]
+}
 
 export const Projects = () => {
   const [archive, toggleArchive] = useState(false)
-  const [mainProjects, setMainProject] = useState([])
-  const [archived, setArchived] = useState([])
+  const [mainProjects, setMainProject] = useState<MainProject[]>([])
+  const [archived, setArchived] = useState<Project[]>([])
 
   useEffect(() => {
     sanityClient
@@ -29,10 +54,14 @@ export const Projects = () => {
       )
       .then(data => {
         setMainProject(
-          data.filter(project => !project.archived).sort((a, b) => b.id - a.id),
+          data
+            .filter((project: Project) => !project.archived)
+            .sort((a: Project, b: Project) => b.id - a.id),
         )
         setArchived(
-          data.filter(project => project.archived).sort((a, b) => b.id - a.id),
+          data
+            .filter((project: Project) => project.archived)
+            .sort((a: Project, b: Project) => b.id - a.id),
         )
       })
       .catch(console.error)
@@ -145,7 +174,7 @@ export const Projects = () => {
   )
 }
 
-const Info = ({ description, liveUrl, sourceUrl, tags }) => (
+const Info = ({ description, liveUrl, sourceUrl, tags }: InfoProps) => (
   <>
     <p className="flex-1">{description}</p>
 
@@ -174,16 +203,3 @@ const Info = ({ description, liveUrl, sourceUrl, tags }) => (
     </ul>
   </>
 )
-
-Info.propTypes = {
-  description: PropTypes.string,
-  liveUrl: PropTypes.string,
-  sourceUrl: PropTypes.string,
-  tags: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string])).isRequired,
-}
-
-Info.defaultProps = {
-  description: '',
-  liveUrl: '',
-  sourceUrl: '',
-}
