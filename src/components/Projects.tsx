@@ -52,16 +52,12 @@ export const Projects = () => {
             }
           }`,
       )
-      .then(data => {
+      .then((data: MainProject[]) => {
         setMainProject(
-          data
-            .filter((project: Project) => !project.archived)
-            .sort((a: Project, b: Project) => b.id - a.id),
+          data.filter(project => !project.archived).sort((a, b) => b.id - a.id),
         )
         setArchived(
-          data
-            .filter((project: Project) => project.archived)
-            .sort((a: Project, b: Project) => b.id - a.id),
+          data.filter(project => project.archived).sort((a, b) => b.id - a.id),
         )
       })
       .catch(console.error)
