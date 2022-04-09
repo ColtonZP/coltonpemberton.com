@@ -1,11 +1,18 @@
-import React from 'react'
+import { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
-import { App } from './App'
 import './tailwind.css'
+import { initializeApp } from 'firebase/app'
+import { getAnalytics } from 'firebase/analytics'
+import { firebaseConfig } from './firebase.config'
+
+import { App } from './App'
+
+const app = initializeApp(firebaseConfig)
+export const analytics = getAnalytics(app)
 
 ReactDOM.render(
-  <React.StrictMode>
+  <StrictMode>
     <App />
-  </React.StrictMode>,
+  </StrictMode>,
   document.getElementById('root'),
 )

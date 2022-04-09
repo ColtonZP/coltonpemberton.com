@@ -1,7 +1,9 @@
+import { logEvent } from 'firebase/analytics'
 import { useState, useEffect } from 'react'
 import sanityClient from '../client'
+import { analytics } from '../index'
 
-interface Project {
+type Project = {
   id: number
   title: string
   liveURL: string
@@ -20,7 +22,8 @@ interface MainProject extends Project {
   categories: string[]
 }
 
-interface InfoProps {
+type InfoProps = {
+  title: string
   description: string
   liveUrl: string
   sourceUrl: string
@@ -63,6 +66,11 @@ export const Projects = () => {
       .catch(console.error)
   }, [])
 
+  const handleArchive = () => {
+    toggleArchive(!archive)
+    if (!archive) logEvent(analytics, 'view_archive')
+  }
+
   return (
     <div className="py-16">
       <div className="text-center">
@@ -98,6 +106,7 @@ export const Projects = () => {
                     </h4>
 
                     <Info
+                      title={site.title}
                       description={site.description}
                       liveUrl={site.liveURL}
                       sourceUrl={site.sourceUrl}
@@ -121,6 +130,7 @@ export const Projects = () => {
                 <h4 className="text-2xl my-4">{site.title}</h4>
 
                 <Info
+                  title={site.title}
                   description={site.description}
                   liveUrl={site.liveURL}
                   sourceUrl={site.sourceUrl}
@@ -134,7 +144,7 @@ export const Projects = () => {
 
       <button
         className="m-auto block text-cp-teal border rounded border-cp-teal py-1 px-4"
-        onClick={() => toggleArchive(!archive)}
+        onClick={handleArchive}
         type="button">
         {archive ? 'hide older projects -' : 'view older projects +'}
       </button>
@@ -170,32 +180,43 @@ export const Projects = () => {
   )
 }
 
-const Info = ({ description, liveUrl, sourceUrl, tags }: InfoProps) => (
-  <>
-    <p className="flex-1">{description}</p>
+const Info = ({ title, description, liveUrl, sourceUrl, tags }: InfoProps) => {
+  const handleLogEvent = (version: string) => {
+    logEvent(
+      analytics,
+      `view_${title.replace(/ /g, '_').toLowerCase()}_${version}`,
+    )
+  }
 
-    <div className="my-4">
-      <a
-        className="bg-cp-teal py-1 px-2 rounded inline-block mr-4"
-        target="_blank"
-        rel="noopener noreferrer"
-        href={liveUrl}>
-        Live
-      </a>
-      <a
-        className="bg-cp-teal py-1 px-2 rounded inline-block"
-        target="_blank"
-        rel="noopener noreferrer"
-        href={sourceUrl}>
-        Source
-      </a>
-    </div>
-    <ul className="flex flex-wrap">
-      {tags.map(tag => (
-        <li className="pr-4 text-cp-teal" key={tag}>
-          {tag}
-        </li>
-      ))}
-    </ul>
-  </>
-)
+  return (
+    <>
+      <p className="flex-1">{description}</p>
+
+      <div className="my-4">
+        <a
+          onClick={() => handleLogEvent('live')}
+          className="bg-cp-teal py-1 px-2 rounded inline-block mr-4"
+          target="_blank"
+          rel="noopener noreferrer"
+          href={liveUrl}>
+          Live
+        </a>
+        <a
+          onClick={() => handleLogEvent('source')}
+          className="bg-cp-teal py-1 px-2 rounded inline-block"
+          target="_blank"
+          rel="noopener noreferrer"
+          href={sourceUrl}>
+          Source
+        </a>
+      </div>
+      <ul className="flex flex-wrap">
+        {tags.map(tag => (
+          <li className="pr-4 text-cp-teal" key={tag}>
+            {tag}
+          </li>
+        ))}
+      </ul>
+    </>
+  )
+}
