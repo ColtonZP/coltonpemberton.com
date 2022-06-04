@@ -1,0 +1,57 @@
+.container {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.jumbotron {
+    flex: 1;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.videoBg {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.jumbotronHeaderContainer {
+    font-family: 'Inter', serif;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    margin-bottom: 2em;
+}
+
+.jumbotronHeader {
+    background: white;
+    color: black;
+    mix-blend-mode: screen;
+    font-size: 11.391rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.tagLine {
+    font-size: 4rem;
+}
+
+.footer {
+    display: flex;
+    flex: 1;
+    padding: 2rem 0;
+    border-top: 1px solid #eaeaea;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
