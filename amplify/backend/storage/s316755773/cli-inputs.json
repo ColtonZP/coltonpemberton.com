@@ -1,0 +1,16 @@
+{
+  "resourceName": "s316755773",
+  "policyUUID": "16755773",
+  "bucketName": "coltonpembertoncomcbc712d9edcc4e3d9989166e01b0c",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
