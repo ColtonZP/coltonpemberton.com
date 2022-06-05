@@ -1,32 +1,9 @@
-import { useEffect, useState } from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { Storage } from 'aws-amplify'
+// import { Storage } from 'aws-amplify'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
-  const [result, setResult] = useState<string>()
-
-  useEffect(() => {
-    let active = true
-    load()
-    return () => {
-      active = false
-    }
-
-    async function load() {
-      setResult(undefined) // this is optional
-      const res = await Storage.get('protected/ocean.mp4', {
-        level: 'protected',
-      })
-
-      if (!active) {
-        return
-      }
-      setResult(res)
-    }
-  }, [])
-
   return (
     <div className={styles.container}>
       <Head>
@@ -47,11 +24,22 @@ const Home: NextPage = () => {
             />
             <h1 className={styles.jumbotronHeader}>
               Colton
-              <br />
-              <strong>Pemberton</strong>
+              <span>Pemberton</span>
+              <span>P.</span>
             </h1>
           </div>
-          <h2 className={styles.tagLine}>Sr. Front End Developer</h2>
+          <h2>Sr. Front End Developer</h2>
+          <p className={styles.aboutP}>
+            I like to build projects using{' '}
+            <span className={styles.primary}>React.js</span>. I work hard to
+            make the internet a better place than when I found it. I currently
+            work at Accenture Federal Services as a Sr. Front End developer.
+          </p>
+          <a
+            className={styles.getInTouch}
+            href="mailto: colton@coltonpemberton.com?subject=Contact from coltonpemberton.com">
+            Get in touch
+          </a>
         </div>
       </main>
     </div>

@@ -4,12 +4,21 @@
     max-width: 1200px;
 }
 
+.primary {
+    color: var(--primary);
+}
+
+.secondary {
+    color: var(--secondary);
+}
+
 .jumbotron {
     flex: 1;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: start;
 }
 
 .videoBg {
@@ -24,18 +33,66 @@
     position: relative;
     display: inline-block;
     overflow: hidden;
-    margin-bottom: 2em;
+    margin-bottom: 1rem;
 }
 
 .jumbotronHeader {
     background: white;
     color: black;
     mix-blend-mode: screen;
-    font-size: 11.391rem;
     font-weight: 900;
     line-height: 1;
 }
 
-.tagLine {
-    font-size: 4rem;
+.jumbotronHeader span:first-child {
+    display: none;
+}
+
+.jumbotronHeader span:last-child {
+    display: block;
+}
+
+.aboutP {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.getInTouch {
+    color: var(--secondary);
+    border: solid 1px var(--secondary);
+    border-radius: .25em;
+    display: block;
+    padding: .75em 1em;
+    position: relative;
+}
+
+.getInTouch:after {
+    content: '';
+    display: block;
+    opacity: 0.2;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--secondary);
+    transition: width ease-in-out .1s;
+}
+
+.getInTouch:hover:after {
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .aboutP {
+        width: 40%;
+    }
+
+    .jumbotronHeader span:first-child {
+        display: block;
+    }
+
+    .jumbotronHeader span:last-child {
+        display: none;
+    }
 }
