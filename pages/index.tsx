@@ -41,8 +41,6 @@ const Home: NextPage = () => {
             Get in touch
           </a>
         </div>
-
-        <video src="/ocean.mp4" loop muted autoPlay />
       </main>
     </div>
   )
