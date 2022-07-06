@@ -1,5 +1,0 @@
-{
-  "AppSyncApiName": "coltonpembertoncom",
-  "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false
-}
