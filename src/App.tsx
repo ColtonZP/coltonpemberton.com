@@ -1,14 +1,27 @@
+import { useState } from 'react'
 import styles from './styles/Home.module.css'
 import ocean from './assets/ocean.mp4'
 
 export const App = () => {
+  const [videoReady, setVideoReady] = useState(false)
+
   return (
     <div className={styles.container}>
       <main className={styles.main}>
         <div className={styles.jumbotron}>
           <div className={styles.jumbotronHeaderContainer}>
-            <video className={styles.videoBg} src={ocean} loop muted autoPlay />
-            <h1 className={styles.jumbotronHeader}>
+            <video
+              className={styles.videoBg}
+              src={ocean}
+              loop
+              muted
+              autoPlay
+              playsInline
+              onLoadedData={() => setVideoReady(true)}
+            />
+            <h1
+              className={styles.jumbotronHeader}
+              style={videoReady ? { mixBlendMode: 'screen' } : {}}>
               Colton
               <span>Pemberton</span>
               <span>P.</span>
