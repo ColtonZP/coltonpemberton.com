@@ -1,5 +1,5 @@
 import styles from './styles/Home.module.css'
-import ocean from './ocean.mp4'
+import ocean from './assets/ocean.mp4'
 
 export const App = () => {
   return (
