@@ -1,4 +1,4 @@
-import { Analytics } from "@vercel/analytics/dist/react";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   title: "Colton Pemberton's Portfolio",

@@ -2,6 +2,7 @@ import { BrandGithub } from "tabler-icons-react";
 
 import type { NextPage } from "next";
 
+import "./globals.css";
 import styles from "./styles.module.css";
 
 const Home: NextPage = () => {
