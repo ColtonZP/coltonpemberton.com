@@ -1,13 +1,10 @@
+import { Analytics } from "@vercel/analytics/dist/react";
 import { BrandGithub } from "tabler-icons-react";
 
 import type { NextPage } from "next";
 
 import "./globals.css";
 import styles from "./styles.module.css";
-
-export const metadata = {
-  title: "Colton Pemberton's Portfolio",
-};
 
 const Home: NextPage = () => {
   return (
