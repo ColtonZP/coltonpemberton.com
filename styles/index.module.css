@@ -1,0 +1,88 @@
+.container {
+  width: 95%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.jumbotron {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.jumbotronH1 {
+  color: var(--caribbean-current);
+}
+
+.jumbotronH1 span:last-child {
+  display: none;
+}
+
+.jumbotronH1 span:first-child {
+  display: block;
+}
+
+.aboutP {
+  width: 100%;
+  margin-bottom: var(--spacing-l);
+}
+
+.links {
+  display: flex;
+  gap: var(--spacing);
+}
+
+.getInTouch, .gitHub {
+  color: var(--tangerine);
+  border: solid 1px var(--tangerine);
+  border-radius: .25em;
+  position: relative;
+}
+
+.getInTouch {
+  padding: .75em 1em;
+}
+
+.gitHub {
+  width: 45.2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.getInTouch:after, .gitHub:after {
+  content: '';
+  display: block;
+  opacity: 0.2;
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--tangerine);
+  transition: width ease-in-out .1s;
+}
+
+.getInTouch:hover:after, .gitHub:hover:after {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 80%;
+  }
+
+  .aboutP {
+    width: 40%;
+  }
+
+  .jumbotronH1 span:first-child {
+    display: none;
+  }
+
+  .jumbotronH1 span:last-child {
+    display: block;
+  }
+}
