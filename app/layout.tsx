@@ -1,9 +1,12 @@
 import { Analytics } from "@vercel/analytics/react";
+import { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Colton Pemberton's Portfolio",
   description: "Colton Pemberton's Portfolio",
-  favicons: "./public/favicon",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
