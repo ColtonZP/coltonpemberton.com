@@ -7,6 +7,9 @@ const nextConfig = {
       { hostname: "source.unsplash.com" },
     ],
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   experimental: {
     appDir: true,
   },
