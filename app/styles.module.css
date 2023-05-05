@@ -12,32 +12,45 @@
   max-width: 1200px;
 }
 
-.jumbotron {
+.header {
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  background: url("../public/wave.svg") no-repeat bottom/cover;
 }
 
-.jumbotronH1 {
+.h1 {
   color: var(--caribbean-current);
 }
 
-.jumbotronH1 span:last-child {
-  display: none;
-}
-
-.jumbotronH1 span:first-child {
+.h1 span:first-child {
   display: block;
 }
 
-.aboutP {
+.h1 span:last-child {
+  display: none;
+}
+
+.h3 {
+  color: var(--tangerine);
+}
+
+.h4 {
+  margin-bottom: var(--spacing);
+}
+
+.h4 span {
+  color: var(--caribbean-current);
+}
+
+.p {
   width: 100%;
   margin-bottom: var(--spacing-l);
 }
 
-.links {
+.links, .projectLinks {
   display: flex;
   gap: var(--spacing);
 }
@@ -45,7 +58,7 @@
 .getInTouch, .gitHub {
   color: var(--tangerine);
   border: solid 1px var(--tangerine);
-  border-radius: .25em;
+  border-radius: var(--spacing);
   position: relative;
 }
 
@@ -60,7 +73,8 @@
   justify-content: center;
 }
 
-.getInTouch:after, .gitHub:after {
+.getInTouch:after,
+.gitHub:after {
   content: '';
   display: block;
   opacity: 0.2;
@@ -73,24 +87,133 @@
   transition: width ease-in-out .1s;
 }
 
-.getInTouch:hover:after, .gitHub:hover:after {
+.getInTouch:hover:after,
+.gitHub:hover:after {
   width: 100%;
+}
+
+.main {
+  background: var(--bone);
+  padding-bottom: var(--spacing-xl);
+  position: relative;
+}
+
+.ul, .tags {
+  list-style: none;
+}
+
+.ul .li:nth-child(even),
+.ul .liWithImage:nth-child(even) {
+  text-align: right;
+}
+
+.ul .li:nth-child(even) .projectLinks,
+.ul .li:nth-child(even) .tags,
+.ul .liWithImage:nth-child(even) .projectLinks,
+.ul .liWithImage:nth-child(even) .tags {
+  justify-content: end;
+}
+
+.li, .liWithImage {
+  margin-bottom: var(--spacing-xl);
+}
+
+.img {
+  height: auto;
+  width: 100%;
+  border-radius: var(--spacing);
+  margin-bottom: var(--spacing);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing);
+  color: var(--caribbean-current);
+  margin: var(--spacing) 0;
+}
+
+.a {
+  color: var(--tangerine);
+  text-decoration: underline;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs)
+}
+
+.a:hover {
+  text-decoration: none;
 }
 
 @media screen and (min-width: 768px) {
   .container {
     width: 80%;
+    max-width: 1000px;
   }
 
-  .aboutP {
+  .p {
     width: 40%;
   }
 
-  .jumbotronH1 span:first-child {
+  .h1 span:first-child {
     display: none;
   }
 
-  .jumbotronH1 span:last-child {
+  .h1 span:last-child {
     display: block;
+  }
+
+  .ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-l)
+  }
+
+  .liWithImage {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-column: 1 / 4;
+    margin-bottom: 0;
+  }
+
+  .liWithImage .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-area: 1 / 1 / 1 / 7;
+  }
+
+  .li {
+    background: var(--bone-dark);
+    padding: var(--spacing);
+    border-radius: var(--spacing);
+  }
+
+  .ul .li:nth-child(even) {
+    text-align: left;
+  }
+
+  .ul .li:nth-child(even) .projectLinks,
+  .ul .li:nth-child(even) .tags {
+    justify-content: start;
+  }
+
+  .liWithImage:nth-child(even) .info {
+    grid-area: 1 / 5 / 1 / 11;
+  }
+
+  .liWithImage p {
+    margin: 0;
+    padding: var(--spacing);
+    border-radius: var(--spacing);
+    background: var(--bone-dark);
+  }
+
+  .img {
+    grid-area: 1 / 5 / 1 / 11;
+  }
+
+  .liWithImage:nth-child(even) .img {
+    grid-area: 1 / 1 / 1 / 7;
   }
 }
