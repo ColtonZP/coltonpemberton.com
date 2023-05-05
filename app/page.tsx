@@ -1,11 +1,9 @@
+import Img from "next/image";
 import { BrandGithub, World } from "tabler-icons-react";
 
 import "./globals.css";
-import { Image } from "./components/Image";
 import styles from "./styles.module.css";
-import { client, getAllProjects, urlForImage } from "../sanity/lib/client";
-
-import Img from "next/image";
+import { getAllProjects, urlForImage } from "../sanity/lib/client";
 
 const Home: () => Promise<JSX.Element> = async () => {
   const projects = await getAllProjects();
@@ -61,6 +59,7 @@ const Home: () => Promise<JSX.Element> = async () => {
                 {project.mainImage && (
                   <Img
                     src={urlForImage(project.mainImage).url()}
+                    alt={project.title}
                     className={styles.img}
                     width={1920}
                     height={1080}
