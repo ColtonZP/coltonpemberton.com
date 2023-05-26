@@ -4,9 +4,6 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Colton Pemberton's Portfolio",
   description: "Colton Pemberton's Portfolio",
-  icons: {
-    icon: "/favicon.ico",
-  },
 };
 
 export default function RootLayout({
