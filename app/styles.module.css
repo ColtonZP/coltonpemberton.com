@@ -14,11 +14,13 @@
 
 .header {
   height: 100vh;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   background: url("../public/wave.svg") no-repeat bottom/cover;
+  top: 10px;
 }
 
 .h1 {
@@ -67,7 +69,7 @@
 }
 
 .gitHub {
-  width: 45.2px;
+  width: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -85,6 +87,7 @@
   left: 0;
   background: var(--tangerine);
   transition: width ease-in-out .1s;
+  border-radius: var(--spacing);
 }
 
 .getInTouch:hover:after,
@@ -94,7 +97,7 @@
 
 .main {
   background: var(--bone);
-  padding-bottom: var(--spacing-xl);
+  padding: var(--spacing-xl) 0;
   position: relative;
 }
 

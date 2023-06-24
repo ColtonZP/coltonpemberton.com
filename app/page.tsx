@@ -5,7 +5,7 @@ import "./globals.css";
 import styles from "./styles.module.css";
 import { getAllProjects, urlForImage } from "../sanity/lib/client";
 
-const Home: () => Promise<JSX.Element> = async () => {
+const Home: () => Promise<React.ReactNode> = async () => {
   const projects = await getAllProjects();
 
   return (
@@ -21,25 +21,19 @@ const Home: () => Promise<JSX.Element> = async () => {
           <h2>Sr. Front End Developer</h2>
 
           <p className={styles.p}>
-            I love building web applications using{" "}
-            <span className="primary">React.js</span>. I currently work at
-            Accenture Federal Services as a Lead Front End developer.
+            I love building web apps using{" "}
+            <span className={styles.primary}>React.js</span>
           </p>
 
           <div className={styles.links}>
             <a
-              // onClick={() => handleLogEvent('get_in_touch')}
               className={styles.getInTouch}
               href="mailto: colton@coltonpemberton.com?subject=Get in touch from coltonpemberton.com"
             >
               Get in touch
             </a>
 
-            <a
-              // onClick={() => handleLogEvent('get_in_touch')}
-              className={styles.gitHub}
-              href="https://github.com/ColtonZP"
-            >
+            <a className={styles.gitHub} href="https://github.com/ColtonZP">
               <BrandGithub size={26} strokeWidth={2} color={"#F58A07"} />
             </a>
           </div>

@@ -20,8 +20,8 @@ export async function getAllProjects(): Promise<Project[]> {
 
 export const urlForImage = (source: any) =>
   createImageUrlBuilder({
-    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
   })
     .image(source)
     .auto("format")

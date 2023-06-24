@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
+  // noinspection TypeScriptUMDGlobal
   children: React.ReactNode;
 }) {
   return (
