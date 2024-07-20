@@ -2,10 +2,6 @@
   color: var(--caribbean-current);
 }
 
-.secondary {
-  color: var(--tangerine);
-}
-
 .container {
   width: 95%;
   margin: 0 auto;

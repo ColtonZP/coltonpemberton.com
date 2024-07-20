@@ -1,6 +1,3 @@
-/*noinspection CssUnknownTarget*/
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;800&display=swap');
-
 :root {
   --caribbean-current: #0F7173;
   --tangerine: #F58A07;
@@ -64,10 +61,6 @@ h4 {
 
 h5 {
   font-size: 1.333rem;
-}
-
-small, .text_small {
-  font-size: 0.75rem;
 }
 
 p {

@@ -43,7 +43,11 @@ export default async function Home() {
               Get in touch
             </a>
 
-            <a className={styles.gitHub} href="https://github.com/ColtonZP">
+            <a
+              className={styles.gitHub}
+              aria-label="GitHub"
+              href="https://github.com/ColtonZP"
+            >
               <BrandGithub size={26} strokeWidth={2} color={"#F58A07"} />
             </a>
           </div>
