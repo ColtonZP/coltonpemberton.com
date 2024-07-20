@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Pizza Shop",
+    "description": "A fictitious Pizza company has allowed me to make a website with React. This site demonstrates cart functionality with Redux as well as a great interactive pizza maker, be sure to check it out!",
+    "image": "/pizza.jpg",
+    "liveURL": "https://coltonzp.github.io/react-pizza/",
+    "codeURL": "https://github.com/ColtonZP/react-pizza",
+    "tags": ["React", "Redux", "Sass"]
+  },
+  {
+    "title": "Kemplet",
+    "description": "Project manager web app. Utilizes Firebase user authentication and database CRUD operations.",
+    "image": "/kemplet.jpg",
+    "liveURL": "https://kemplet.com/",
+    "codeURL": "https://github.com/ColtonZP/kemplet",
+    "tags": ["React", "MobX", "Firebase", "Sass"]
+  },
+  {
+    "title": "Coffee Shop",
+    "description": "A coffee shop that utilizes a CMS for food items and has an ordering system with MobX.",
+    "image": "/coffee.jpg",
+    "liveURL": "https://coffee-and-cakes.vercel.app",
+    "codeURL": "https://github.com/ColtonZP/coffee-and-cakes",
+    "tags": ["Next.js", "MobX", "Prismic", "Sass"]
+  },
+  {
+    "title": "Loaned",
+    "description": "Keep track of who owes what. This web app allows users to type in text and have it converted into a money management system.",
+    "liveURL": "https://coltonzp.github.io/loaned/",
+    "codeURL": "https://github.com/ColtonZP/loaned",
+    "tags": ["React", "TypeScript", "ZuStand"]
+  },
+  {
+    "title": "Taskmaster",
+    "description": "A web app that utilizes Google Map services. With this web app, you can use it as a todo list that has addresses attached to the task. When it's time to plan the day, the API will help determine the most efficient route to get the day done.",
+    "liveURL": "https://coltonzp.github.io/taskmaster/",
+    "codeURL": "https://github.com/ColtonZP/taskmaster",
+    "tags": ["JavaScript", "Google Maps API"]
+  },
+  {
+    "title": "Pokedex",
+    "description": "Simple web app that calls to a hosted Apollo Server with Pokemon data. Utilizes SSR features from Next.js.",
+    "liveURL": "https://colton-pokemon-gql.vercel.app/",
+    "codeURL": "https://github.com/ColtonZP/pokemon-gql",
+    "tags": ["Next.js", "TypeScript", "GraphQL"]
+  }
+]

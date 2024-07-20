@@ -1,5 +1,6 @@
 import { Analytics } from "@vercel/analytics/react";
-import { Metadata } from "next";
+import type { Metadata } from "next";
+import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
   title: "Colton Pemberton's Portfolio",
@@ -8,10 +9,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: {
-  // noinspection TypeScriptUMDGlobal
-  children: React.ReactNode;
-}) {
+}: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="en">
       <Analytics />

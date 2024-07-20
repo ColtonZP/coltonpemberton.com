@@ -1,12 +1,22 @@
+import { promises as fs } from "node:fs";
 import Img from "next/image";
 import { BrandGithub, World } from "tabler-icons-react";
 
 import "./globals.css";
 import styles from "./styles.module.css";
-import { getAllProjects, urlForImage } from "../sanity/lib/client";
 
-const Home: () => Promise<React.ReactNode> = async () => {
-  const projects = await getAllProjects();
+type Project = {
+  title: string;
+  description: string;
+  image?: string;
+  liveURL: string;
+  codeURL: string;
+  tags: string[];
+};
+
+export default async function Home() {
+  const file = await fs.readFile(`${process.cwd()}/app/data.json`, "utf8");
+  const projects: Project[] = JSON.parse(file);
 
   return (
     <div>
@@ -47,12 +57,12 @@ const Home: () => Promise<React.ReactNode> = async () => {
           <ul className={styles.ul}>
             {projects.map((project, index) => (
               <li
-                className={project.mainImage ? styles.liWithImage : styles.li}
+                className={project.image ? styles.liWithImage : styles.li}
                 key={project.title}
               >
-                {project.mainImage && (
+                {project.image && (
                   <Img
-                    src={urlForImage(project.mainImage).url()}
+                    src={project.image}
                     alt={project.title}
                     className={styles.img}
                     width={1920}
@@ -68,7 +78,7 @@ const Home: () => Promise<React.ReactNode> = async () => {
                   <p>{project.description}</p>
 
                   <ul className={styles.tags}>
-                    {project.tags.map((tag) => (
+                    {project.tags.map(tag => (
                       <li key={`${project.title}-${tag}`}>{tag}</li>
                     ))}
                   </ul>
@@ -95,6 +105,4 @@ const Home: () => Promise<React.ReactNode> = async () => {
       </main>
     </div>
   );
-};
-
-export default Home;
+}
