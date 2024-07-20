@@ -1,8 +1,8 @@
 import { promises as fs } from "node:fs";
 import Img from "next/image";
+import { Suspense } from "react";
 import { BrandGithub, World } from "tabler-icons-react";
 
-import "./globals.css";
 import styles from "./styles.module.css";
 
 type Project = {
@@ -22,18 +22,26 @@ export default async function Home() {
     <div>
       <header className={styles.header}>
         <div className={styles.container}>
-          <h1 className={styles.h1}>
-            Colton
-            <span>P</span>
-            <span>Pemberton</span>
-          </h1>
+          <div className={styles.h1Container}>
+            <Suspense>
+              <video
+                className={styles.videoBg}
+                src="/ocean.mp4"
+                loop
+                muted
+                autoPlay
+                playsInline
+              />
+            </Suspense>
+
+            <h1 className={styles.h1}>
+              Colton
+              <span>P</span>
+              <span>Pemberton</span>
+            </h1>
+          </div>
 
           <h2>Sr. Front End Developer</h2>
-
-          <p className={styles.p}>
-            I love building web apps using{" "}
-            <span className={styles.primary}>React.js</span>
-          </p>
 
           <div className={styles.links}>
             <a

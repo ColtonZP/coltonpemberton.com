@@ -1,26 +1,36 @@
-.primary {
-  color: var(--caribbean-current);
-}
-
 .container {
   width: 95%;
   margin: 0 auto;
   max-width: 1200px;
 }
 
-.header {
-  height: 100vh;
+.h1Container {
   position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.videoBg {
+  width: 120%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.header {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   background: url("../public/wave.svg") no-repeat bottom/cover;
-  top: 10px;
 }
 
 .h1 {
-  color: var(--caribbean-current);
+  mix-blend-mode: screen;
+  background: var(--seaasalt);
+  color: black;
+  margin-bottom: 0;
 }
 
 .h1 span:first-child {
@@ -43,14 +53,10 @@
   color: var(--caribbean-current);
 }
 
-.p {
-  width: 100%;
-  margin-bottom: var(--spacing-l);
-}
-
 .links, .projectLinks {
   display: flex;
   gap: var(--spacing);
+  margin-bottom: var(--spacing-l);
 }
 
 .getInTouch, .gitHub {
@@ -95,6 +101,7 @@
   background: var(--bone);
   padding: var(--spacing-xl) 0;
   position: relative;
+  top: -8px;
 }
 
 .ul, .tags {
@@ -148,10 +155,6 @@
   .container {
     width: 80%;
     max-width: 1000px;
-  }
-
-  .p {
-    width: 40%;
   }
 
   .h1 span:first-child {
