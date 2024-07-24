@@ -23,7 +23,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  background: url("../public/wave.svg") no-repeat bottom/cover;
+  background: url("../public/wave.svg") no-repeat bottom right 10%/cover;
 }
 
 .h1 {
@@ -31,6 +31,7 @@
   background: var(--seaasalt);
   color: black;
   margin-bottom: 0;
+  font-weight: 900;
 }
 
 .h1 span:first-child {
@@ -100,8 +101,6 @@
 .main {
   background: var(--bone);
   padding: var(--spacing-xl) 0;
-  position: relative;
-  top: -8px;
 }
 
 .ul, .tags {
@@ -152,6 +151,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  .header {
+    background: url("../public/wave.svg") no-repeat bottom/cover;
+  }
+
   .container {
     width: 80%;
     max-width: 1000px;
