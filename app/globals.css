@@ -1,80 +1,80 @@
 :root {
-  --caribbean-current: #0F7173;
-  --tangerine: #F58A07;
-  --oxford-blue: #0A122A;
-  --seaasalt: #FBFAF8;
-  --bone: #E7DECD;
-  --bone-dark: #DED1BA;
+    --caribbean-current: #0F7173;
+    --tangerine: #F58A07;
+    --oxford-blue: #0A122A;
+    --seaasalt: #FBFAF8;
+    --bone: #E7DECD;
+    --bone-dark: #DED1BA;
 
-  --spacing-xs: 0.25rem;
-  --spacing-s: 0.5rem;
-  --spacing: 1rem;
-  --spacing-l: 2rem;
-  --spacing-xl: 3rem;
+    --spacing-xs: 0.25rem;
+    --spacing-s: 0.5rem;
+    --spacing: 1rem;
+    --spacing-l: 2rem;
+    --spacing-xl: 3rem;
 }
 
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  line-height: 1.2;
-  background: var(--seaasalt);
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    line-height: 1.2;
+    background: var(--seaasalt);
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5 {
-  font-weight: 900;
+    font-weight: 900;
 }
 
 h1, h2, h3, h4, h5, p {
-  margin-bottom: var(--spacing);
+    margin-bottom: var(--spacing);
 }
 
 h1 {
-  font-size: 5.61rem;
-  line-height: 1;
+    font-size: 5.61rem;
+    line-height: 1;
 }
 
 h2 {
-  font-size: 3.157rem;
+    font-size: 3.157rem;
 }
 
 h3 {
-  font-size: 2.369rem;
+    font-size: 2.369rem;
 }
 
 h4 {
-  font-size: 1.777rem;
+    font-size: 1.777rem;
 }
 
 h5 {
-  font-size: 1.333rem;
+    font-size: 1.333rem;
 }
 
 p {
-  line-height: 1.75;
+    line-height: 1.75;
 }
 
 @media screen and (min-width: 768px) {
-  h1 {
-    font-size: 7.478rem;
-  }
+    h1 {
+        font-size: 7.478rem;
+    }
 }
 
 @media screen and (min-width: 992px) {
-  h1 {
-    font-size: 9.969rem;
-  }
+    h1 {
+        font-size: 9.969rem;
+    }
 }

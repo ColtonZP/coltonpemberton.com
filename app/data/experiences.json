@@ -1,0 +1,26 @@
+[
+  {
+    "company": "PrenticeWorx",
+    "title": "Architect/Full Stack Developer",
+    "date": "Jun 2023 -",
+    "location": "Remote",
+    "description": [
+      "Led development of business applications using React, Next.js, Redux, Typescript, C#, and Dynamics 365 integration.",
+      "Architected applications addressing specific business requirements and mentored developers through code reviews, ensuring on-time delivery of releases.",
+      "Coordinated seamlessly with diverse project teams, ensuring eﬀective communication and collaboration."
+    ]
+  },
+  {
+    "company": "Accenture Federal Services",
+    "title": "Architect Front-end Developer",
+    "date": "Sep 2021 - Jun 2023",
+    "location": "Remote",
+    "description": [
+      "Orchestrated and optimized front-end codebase by leveraging React, TypeScript, Redux, Formik, Zod, TanStack Query, Bootstrap, and Storybook.",
+      "Delivered UI implementations on schedule and collaborated with back-end developers and UX designers to align technical solutions across teams.",
+      "Maintained a large-scale codebase by ensuring code quality standards and providing code review feedback to maintain development best practices.",
+      "Guided and managed critical incidents, focusing on resolving issues quickly and deploying solutions swiftly.",
+      "Enhanced user experience for applications serving 1M+ daily active users."
+    ]
+  }
+]

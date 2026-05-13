@@ -1,224 +1,194 @@
-.container {
-  width: 95%;
-  margin: 0 auto;
-  max-width: 1200px;
+.header {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 5vw;
 }
 
 .h1Container {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
 }
 
 .videoBg {
-  width: 120%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  background: url("../public/wave.svg") no-repeat bottom right 10%/cover;
+    width: 120%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .h1 {
-  mix-blend-mode: screen;
-  background: var(--seaasalt);
-  color: black;
-  margin-bottom: 0;
-  font-weight: 900;
+    mix-blend-mode: screen;
+    background: var(--seaasalt);
+    color: black;
+    margin-bottom: 0;
+    font-weight: 900;
 }
 
 .h1 span:first-child {
-  display: block;
+    display: block;
 }
 
 .h1 span:last-child {
-  display: none;
+    display: none;
 }
 
 .h3 {
-  color: var(--tangerine);
+    color: var(--tangerine);
 }
 
-.h4 {
-  margin-bottom: var(--spacing);
-}
-
-.h4 span {
-  color: var(--caribbean-current);
+.h5 {
+    margin: 0;
 }
 
 .links, .projectLinks {
-  display: flex;
-  gap: var(--spacing);
-  margin-bottom: var(--spacing-l);
+    display: flex;
+    gap: var(--spacing);
+    margin-bottom: var(--spacing-l);
 }
 
 .getInTouch, .gitHub {
-  color: var(--tangerine);
-  border: solid 1px var(--tangerine);
-  border-radius: var(--spacing);
-  position: relative;
+    color: var(--tangerine);
+    border: solid 1px var(--tangerine);
+    border-radius: var(--spacing);
+    position: relative;
 }
 
 .getInTouch {
-  padding: .75em 1em;
+    padding: .75em 1em;
 }
 
 .gitHub {
-  width: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .getInTouch:after,
 .gitHub:after {
-  content: '';
-  display: block;
-  opacity: 0.2;
-  width: 0;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: var(--tangerine);
-  transition: width ease-in-out .1s;
-  border-radius: var(--spacing);
+    content: '';
+    display: block;
+    opacity: 0.2;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--tangerine);
+    transition: width ease-in-out .1s;
+    border-radius: var(--spacing);
 }
 
 .getInTouch:hover:after,
 .gitHub:hover:after {
-  width: 100%;
+    width: 100%;
 }
 
 .main {
-  background: var(--bone);
-  padding: var(--spacing-xl) 0;
+    background: var(--bone);
+    padding: var(--spacing-xl) 10vw;
 }
 
-.ul, .tags {
-  list-style: none;
+.projects, .tags, .experiences {
+    list-style: none;
 }
 
-.ul .li:nth-child(even),
-.ul .liWithImage:nth-child(even) {
-  text-align: right;
+.experiences {
+    margin-bottom: var(--spacing-xl);
 }
 
-.ul .li:nth-child(even) .projectLinks,
-.ul .li:nth-child(even) .tags,
-.ul .liWithImage:nth-child(even) .projectLinks,
-.ul .liWithImage:nth-child(even) .tags {
-  justify-content: end;
+.experience {
+    margin-bottom: var(--spacing);
 }
 
-.li, .liWithImage {
-  margin-bottom: var(--spacing-xl);
+.experienceHeader {
+    display: flex;
+    align-items: end;
+    gap: var(--spacing-s);
+}
+
+.subtle {
+    color: #555;
+}
+
+.experienceDescription {
+    list-style: outside;
+    margin-left: 15px;
+    margin-top: var(--spacing);
+}
+
+.experienceDescription li {
+    margin: var(--spacing-s) 0;
+}
+
+.projectHeader {
+    margin-bottom: var(--spacing);
+}
+
+.projectHeader span {
+    color: var(--caribbean-current);
+}
+
+.projects {
+    display: grid;
+    gap: var(--spacing-l);
+}
+
+.project {
+    background: var(--bone-dark);
+    padding: var(--spacing);
+    border-radius: var(--spacing);
 }
 
 .img {
-  height: auto;
-  width: 100%;
-  border-radius: var(--spacing);
-  margin-bottom: var(--spacing);
+    height: auto;
+    width: 100%;
+    border-radius: var(--spacing);
+    margin-bottom: var(--spacing);
 }
 
 .tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing);
-  color: var(--caribbean-current);
-  margin: var(--spacing) 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing);
+    color: var(--caribbean-current);
+    margin: var(--spacing) 0;
 }
 
 .a {
-  color: var(--tangerine);
-  text-decoration: underline;
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-xs)
+    color: var(--tangerine);
+    text-decoration: underline;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
 }
 
 .a:hover {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 @media screen and (min-width: 768px) {
-  .header {
-    background: url("../public/wave.svg") no-repeat bottom/cover;
-  }
+    .header {
+        padding: 0 10vw;
+    }
 
-  .container {
-    width: 80%;
-    max-width: 1000px;
-  }
+    .main {
+        padding: var(--spacing-xl) 10vw;
+    }
 
-  .h1 span:first-child {
-    display: none;
-  }
+    .h1 span:first-child {
+        display: none;
+    }
 
-  .h1 span:last-child {
-    display: block;
-  }
+    .h1 span:last-child {
+        display: block;
+    }
 
-  .ul {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-l)
-  }
-
-  .liWithImage {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-column: 1 / 4;
-    margin-bottom: 0;
-  }
-
-  .liWithImage .info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    grid-area: 1 / 1 / 1 / 7;
-  }
-
-  .li {
-    background: var(--bone-dark);
-    padding: var(--spacing);
-    border-radius: var(--spacing);
-  }
-
-  .ul .li:nth-child(even) {
-    text-align: left;
-  }
-
-  .ul .li:nth-child(even) .projectLinks,
-  .ul .li:nth-child(even) .tags {
-    justify-content: start;
-  }
-
-  .liWithImage:nth-child(even) .info {
-    grid-area: 1 / 5 / 1 / 11;
-  }
-
-  .liWithImage p {
-    margin: 0;
-    padding: var(--spacing);
-    border-radius: var(--spacing);
-    background: var(--bone-dark);
-  }
-
-  .img {
-    grid-area: 1 / 5 / 1 / 11;
-  }
-
-  .liWithImage:nth-child(even) .img {
-    grid-area: 1 / 1 / 1 / 7;
-  }
+    .projects {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
